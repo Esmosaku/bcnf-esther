@@ -71,7 +71,7 @@ public class Normalizer {
    * @return the FDset of the new projection
    */
   public static FDSet projectFD(Set<String> part, FDSet fdset){
-    FDSet fdSet1 = new FDSet();
+    FDSet fdSetMain = new FDSet();
     Set<Set<String>> tempPowerSet = FDUtil.powerSet(part);
     
     for (Set<String> each: tempPowerSet){
@@ -91,10 +91,10 @@ public class Normalizer {
       }
       else{
         FD newFd = new FD(each, beta);
-        fdSet1.add(newFd);
+        fdSetMain.add(newFd);
       }
     }
-    return fdSet1;
+    return fdSetMain;
   }
 
   
